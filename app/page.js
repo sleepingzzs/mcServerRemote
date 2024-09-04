@@ -50,7 +50,7 @@ export default function Home() {
 		console.log(data);
 	}, []);
 	return (
-		<div className='h-screen flex items-center justify-center'>
+		<div className='h-screen flex items-center justify-center overflow-hidden'>
 			<div className='bg-[#191919] px-20 py-10 rounded-sm mx-auto flex gap-5 flex-col items-center shadow-2xl'>
 				<h1 className='text-[38px] text-red-600'>
 					{process.env.NEXT_PUBLIC_NAME} SMP
