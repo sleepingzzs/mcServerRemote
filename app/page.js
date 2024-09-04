@@ -52,7 +52,9 @@ export default function Home() {
 	return (
 		<div className='h-screen flex items-center justify-center'>
 			<div className='bg-[#191919] px-20 py-10 rounded-sm mx-auto flex gap-5 flex-col items-center shadow-2xl'>
-				<h1 className='text-[38px] text-red-600'>SKIBIDI ALPHA'S</h1>
+				<h1 className='text-[38px] text-red-600'>
+					{process.env.NEXT_PUBLIC_NAME} SMP
+				</h1>
 				<div className='border-2 border-red-600 rounded-sm w-[300px]'>
 					<div className='flex flex-row'>
 						<p className='text-white/70 border-red-600 border-r-2 w-[80px] p-2'>
