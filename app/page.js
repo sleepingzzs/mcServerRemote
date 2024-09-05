@@ -25,11 +25,11 @@ export default function Home() {
 			alert("INCORRECT PIN");
 		}
 		state.status = true;
-		const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 		for (let i = 0; i < 5; i++) {
+			const sleep = async (ms) => new Promise((r) => setTimeout(r, ms));
 			fetchStatus();
 			console.log("heeeelloooooooooooooo" + " " + i);
-			sleep(15000);
+			await sleep(15000);
 		}
 		document.getElementById("frm").reset();
 	};
@@ -60,20 +60,26 @@ export default function Home() {
 						<p className='text-white/70 border-red-600 border-r-2 w-[80px] p-2'>
 							SERVER
 						</p>
-						<p className='p-2 text-white'>{data.server}</p>
+						<p className='p-2 text-white'>
+							{data.server === "OFFLINE"
+								? "OFFLINE 🔴"
+								: "ONLINE 🟢"}
+						</p>
 					</div>
 					<div className='flex flex-row'>
 						<p className='text-white/70 border-red-600 border-r-2 w-[80px] p-2'>
 							PLAYERS
 						</p>
-						<p className='p-2 text-white'>{data.players}</p>
+						<p className='p-2 text-white'>{data.players + " 👤"}</p>
 					</div>
 					<div className='flex flex-row'>
 						<p className='text-white/70 border-red-600 border-r-2 w-[80px] p-2'>
 							STATUS
 						</p>
 						<p className='p-2 text-white'>
-							{data.status ? "STARTED/STARTING" : "SLEEPING"}
+							{data.status
+								? "STARTED/STARTING 🏃"
+								: "SLEEPING 💤"}
 						</p>
 					</div>
 				</div>
